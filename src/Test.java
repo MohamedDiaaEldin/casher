@@ -9,10 +9,10 @@ public class Test {
     }
     static void dropTable(){
         db.connect();
-        Connection connection = db.connection;
+        Connection connection = db.getConnection();
         String create = "drop table product2" ;
         try {
-            Statement statement = db.connection.createStatement();
+            Statement statement = db.getConnection().createStatement();
             int r = statement.executeUpdate(create) ;
             System.out.println(r);
         } catch (SQLSyntaxErrorException e){
@@ -24,10 +24,10 @@ public class Test {
     }
     static void createTable(){
         db.connect();
-        Connection connection = db.connection;
+        Connection connection = db.getConnection();
         String create = "create table product3 (code int primary key , name nvarchar(75), price float(10, 2))" ;
         try {
-            Statement statement = db.connection.createStatement();
+            Statement statement = db.getConnection().createStatement();
             int r = statement.executeUpdate(create) ;
             System.out.println(r);
         } catch (SQLSyntaxErrorException e){
@@ -38,7 +38,7 @@ public class Test {
     }
     static void select(){
         db.connect(); ;
-        Connection connection = db.connection;
+        Connection connection = db.getConnection();
         String select  = "select * from product" ;
 
         try {
@@ -63,10 +63,10 @@ public class Test {
     }
     static void testDelete(){
         db.connect();
-        Connection connection =db.connection ;
+        Connection connection =db.getConnection() ;
         String delete = "delete from product where code = ?" ;
         try {
-            PreparedStatement statement = db.connection.prepareStatement(delete);
+            PreparedStatement statement = db.getConnection().prepareStatement(delete);
             statement.setInt(1, 11);
             int r  = statement.executeUpdate() ;  // return 1  for success delete and 0 for no deletion
             System.out.println(r);
@@ -78,7 +78,7 @@ public class Test {
 
     static void testUpdate(){
         db.connect();
-        Connection connection =db.connection ;
+        Connection connection =db.getConnection();
         String update = "update product set price = ? , name = ? where code = ?" ;
         try {
             PreparedStatement statement = connection.prepareStatement(update) ;
@@ -101,7 +101,7 @@ public class Test {
         double price = 4.0 ;
         String insertProduct = "insert into product (code , name, price) values (?, ?, ?)" ;
         try {
-            PreparedStatement statement = db.connection.prepareStatement(insertProduct) ;
+            PreparedStatement statement = db.getConnection().prepareStatement(insertProduct) ;
             statement.setInt(1, code);
             statement.setString(2, name);
             statement.setDouble(3, price);
@@ -109,7 +109,7 @@ public class Test {
             int r = statement.executeUpdate() ;
             System.out.println(r);
 
-            db.connection.close() ;
+            db.getConnection().close() ;
         } catch (SQLIntegrityConstraintViolationException E){
             JOptionPane.showMessageDialog(null, "already there");
         }catch (SQLException e) {

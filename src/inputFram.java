@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package casher;
 
+
+import casher.*;
 import javafx.scene.control.RadioButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -354,11 +355,9 @@ public class inputFram extends javax.swing.JFrame {
             println(result);
             
             
-            
-            
-            
-            
-            
+            Product product = new Product(code, name, price, quantity, description) ;
+            Database db = new Database() ;
+            db.insertProduct(product );
             
             // set new added data here            
             // int row = dataTable.rowAtPoint(evt.getPoint());
@@ -403,6 +402,7 @@ public class inputFram extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(inputFram.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
