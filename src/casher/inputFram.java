@@ -1,18 +1,9 @@
 package casher;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-
-import casher.*;
-import javafx.scene.control.RadioButton;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
+
 
 /**
  *
@@ -20,15 +11,19 @@ import javax.swing.JRadioButton;
  */
 public class inputFram extends javax.swing.JFrame {
 
-    /**
-     * Creates new form inputFram
-     */
-    public inputFram() {
+    public inputFram() { 
+        // netbeans 
         initComponents();
+        // my modifications 
+        initCustomFram();
+        initCustomComponents();
+    }
+    private void initCustomFram(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);
-        this.setSize(800, 600);
         this.setResizable(false);
+    }
+    private void initCustomComponents(){
         piceRadio.doClick();
     }
 
@@ -408,10 +403,8 @@ public class inputFram extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new inputFram().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new inputFram().setVisible(true);
         });
     }
 

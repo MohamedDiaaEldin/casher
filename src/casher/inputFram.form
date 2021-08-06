@@ -75,9 +75,6 @@
             <Property name="rowHeight" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="35" type="code"/>
             </Property>
-            <Property name="rowHeight" type="int" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="35" type="code"/>
-            </Property>
           </Properties>
         </Component>
       </SubComponents>
