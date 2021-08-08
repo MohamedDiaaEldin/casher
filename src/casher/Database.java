@@ -6,8 +6,10 @@ package casher;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -28,6 +30,7 @@ public class Database {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public Connection getConnection(){
         return this.connection ;
     }
@@ -56,6 +59,28 @@ public class Database {
         return false ;
     }
         
-    
+    public void getData(){
+        connect();
+        String select  = "select * from product" ;
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet r = statement.executeQuery(select) ;
+            if (r == null){
+                JOptionPane.showMessageDialog(null, "no data found");
+            }
+            else{
+                while(r.next()){
+                    int code = r.getInt("code");
+                    double price = r.getDouble("price") ;
+                    String name  = r.getString("name") ;
+                    System.out.println(code + " , " + price + " , " + name);
+                }
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
 }
