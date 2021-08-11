@@ -45,7 +45,6 @@ public class outputFram extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         allRadio = new javax.swing.JRadioButton();
         productRadio = new javax.swing.JRadioButton();
-        gRadio = new javax.swing.JRadioButton();
         productTxt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -65,7 +64,7 @@ public class outputFram extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(allRadio);
-        allRadio.setText("الكل");
+        allRadio.setText("All");
         allRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allRadioActionPerformed(evt);
@@ -73,18 +72,10 @@ public class outputFram extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(productRadio);
-        productRadio.setText("منتج");
+        productRadio.setText("Product");
         productRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productRadioActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(gRadio);
-        gRadio.setText("جرد");
-        gRadio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gRadioActionPerformed(evt);
             }
         });
 
@@ -94,7 +85,7 @@ public class outputFram extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("بحث");
+        jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -106,15 +97,14 @@ public class outputFram extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(521, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(productTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(gRadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(allRadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                            .addComponent(allRadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(productRadio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(141, 141, 141))
         );
@@ -127,9 +117,7 @@ public class outputFram extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(productRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(productTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(gRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(103, 103, 103)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -142,7 +130,7 @@ public class outputFram extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ملاحظات", "الكميه", "الإسم", "السعر", "الكود"
+                "Notes", "Quantity", "Name", "Price", "Code"
             }
         ) {
             Class[] types = new Class [] {
@@ -200,11 +188,6 @@ public class outputFram extends javax.swing.JFrame {
         // TODO add your handling code here:
         productTxt.setEnabled(true);
     }//GEN-LAST:event_productRadioActionPerformed
-
-    private void gRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gRadioActionPerformed
-        // TODO add your handling code here:
-        disableProduct();
-    }//GEN-LAST:event_gRadioActionPerformed
 
     /* check if code is insteger and is not negative number 
     @return integer value of the code or -1 flag if it's not valid
@@ -301,7 +284,6 @@ public class outputFram extends javax.swing.JFrame {
     private javax.swing.JRadioButton allRadio;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTable dataTable;
-    private javax.swing.JRadioButton gRadio;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
